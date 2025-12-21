@@ -163,7 +163,7 @@ footer span {
     box-shadow: 0 0 15px var(--primary);
 }
 
-img {
+img, video {
     border: 1px solid var(--border);
     border-radius: var(--border-radius);
 }
@@ -209,7 +209,7 @@ img {
     animation-play-state: paused;
 }
 
-.portfolio-showcase .box img {
+.portfolio-showcase .box img, .portfolio-showcase .box video {
     width: 20rem;
     height: 12rem;
     transition: 0.3s ease all;
@@ -217,7 +217,7 @@ img {
     object-fit: cover;
 }
 
-.portfolio-showcase .box img:hover {
+.portfolio-showcase .box img:hover, .portfolio-showcase .box video:hover {
     transform: scale(1.05);
 }
 
