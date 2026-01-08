@@ -60,7 +60,7 @@ body:has(dialog[open]) {
   background: var(--secondary); 
 }
 
-h1, h2, h3 {
+h1, h2, h3, h4 {
     font-family: Michroma, sans-serif;
     color: var(--title-text);
     margin: 0;
@@ -485,6 +485,7 @@ header .start img {
         max-width: 80vw;
     }
 }
+
 
 
 
