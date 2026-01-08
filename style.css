@@ -67,8 +67,8 @@ h1, h2, h3, h4 {
 }
 
 h1 {
-    font-size: 4.5rem;
-    text-shadow: 0 0 15px var(--primary);
+    font-size: 3.5rem;
+    text-shadow: 0 0 80px var(--primary);
 }
 
 h2 {
@@ -486,5 +486,6 @@ header .start img {
         max-width: 80vw;
     }
 }
+
 
 
