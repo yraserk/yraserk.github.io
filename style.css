@@ -96,7 +96,7 @@ span, p {
 }
 
 button {
-    background-color: var(--primary);
+    background: linear-gradient(90deg, #3c83f6 0%, #5b9aff 40%, #3c83f6 70%, #5b9aff 100%);
     color: var(--light-text);
     border: none;
     border-radius: var(--border-radius);
@@ -293,7 +293,6 @@ img, video {
 
 .join .discord-button span {
     font-size: var(--text-size-2);
-    background: linear-gradient(90deg, #3c83f6 0%, #5b9aff 40%, #3c83f6 70%, #5b9aff 100%);
 }
 
 .join .discord-button svg {
@@ -486,6 +485,7 @@ header .start img {
         max-width: 80vw;
     }
 }
+
 
 
 
