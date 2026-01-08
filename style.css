@@ -302,7 +302,7 @@ img, video {
 
 header .discord-button {
     background: linear-gradient(90deg, #3c83f6 0%, #5b9aff 40%, #3c83f6 70%, #5b9aff 100%);
-    box-shadow: 0 0 15px var(--primary);
+    box-shadow: 0 0 9px var(--primary);
 }
 
 header .discord-button a {
@@ -486,4 +486,5 @@ header .start img {
         max-width: 80vw;
     }
 }
+
 
