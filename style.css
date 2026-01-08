@@ -96,7 +96,7 @@ span, p {
 }
 
 button {
-    background-color: linear-gradient(90deg, #3c83f6 0%, #5b9aff 40%, #3c83f6 70%, #5b9aff 100%);
+    background-color: var(--primary);
     color: var(--light-text);
     border: none;
     border-radius: var(--border-radius);
@@ -109,7 +109,7 @@ button {
 }
 
 button:hover {
-    filter: brightness(50%);
+    filter: brightness(75%);
 }
 
 button svg {
@@ -485,6 +485,7 @@ header .start img {
         max-width: 80vw;
     }
 }
+
 
 
 
