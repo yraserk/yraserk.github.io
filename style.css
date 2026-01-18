@@ -222,6 +222,10 @@ img, video {
     }
 }
 
+.roblox.show-all .box-container .box, .other.show-all .box-container .box {
+    display: block;
+}
+
 .portfolio-showcase {
     display: none;
     gap: var(--padding-3);
@@ -549,6 +553,7 @@ header .start img {
         max-width: 80vw;
     }
 }
+
 
 
 
