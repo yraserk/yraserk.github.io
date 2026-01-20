@@ -140,7 +140,7 @@ header {
     top: 0;
     z-index: 10;
     width: calc(100% - (12vw * 2));
-    backdrop-filter: blur(10px);
+    background: var(--background);
 }
 
 footer {
@@ -151,6 +151,7 @@ footer {
     border-top: 1px solid var(--border);
     margin-top: 150px;
     font-size: 0.8rem;
+    width: calc(100% - (1vw * 1));
 }
 
 footer span {
@@ -187,6 +188,12 @@ img, video {
 .portfolio-categories button:not(.selected) {
     outline: 1px solid var(--primary);
     background-color: var(--secondary);
+}
+
+@media only screen and (max-width: 500px) {
+.portfolio-categories {
+    flex-direction: column;
+  }
 }
 
 .portfolio-showcase .box {
@@ -275,6 +282,7 @@ img, video {
 
 .team-container {
     max-width: 50rem;
+    min-width: 20rem;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -313,10 +321,11 @@ img, video {
 
 .tc-box {
         max-width: 500px;
-        margin: 0 auto;
+        min-width: 300px;  
+        margin: 100px 40px 0 40px;
         padding: 5rem 3rem;
-        background: rgba(255, 255, 255, 0.05);
-        border: 1px solid rgba(255, 255, 255, 0.05);
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid rgba(255, 255, 255, 0.08);
         border-radius: 16px;
 }
 
@@ -368,8 +377,14 @@ img, video {
 }
 
 .join .discord-button {
+    background: linear-gradient(90deg, #3c83f6 0%, #5b9aff 40%, #3c83f6 70%, #5b9aff 100%);
+    box-shadow: 0 0 9px var(--primary);
     padding: var(--padding-2) var(--padding-3);
     margin-top: var(--padding-3);
+}
+
+.join .discord-button a {
+    background: none;
 }
 
 .join .discord-button span {
@@ -561,6 +576,7 @@ header .start img {
         max-width: 80vw;
     }
 }
+
 
 
 
