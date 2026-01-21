@@ -343,9 +343,9 @@ img, video {
 
 }
 
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 768px) {
 .tc-box {
-    max-width: 100%;
+    width: clamp(280px, 90vw, 600px);
     overflow-x: hidden; 
   }
 }
@@ -597,6 +597,7 @@ header .start img {
         max-width: 80vw;
     }
 }
+
 
 
 
