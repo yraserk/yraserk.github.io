@@ -155,7 +155,7 @@ footer span {
     font-size: 0.8rem;
 }
 
-footer-links {
+.footer-links {
     display: flex;
     flex-direction: column;
     border-top: 1px solid var(--border);
@@ -163,7 +163,7 @@ footer-links {
     width: 100%;
 }
 
-footer-bottom {
+.footer-bottom {
     display: flex;
     flex-direction: column;
     border-top: 1px solid var(--border);
@@ -215,8 +215,6 @@ img, video {
     aspect-ratio: 16 / 9;
     position: relative;
     overflow: hidden;
-    border: 1px solid var(--border);
-    border-radius: var(--border-radius);
 }
 
 .portfolio-showcase .box-container > *:nth-child(n + 7) {
@@ -326,11 +324,11 @@ img, video {
 }
 
 .team-container span:hover::before {
-    display: none;
+    display: block;
 }
 
 .team-container span:hover img {
-    display: block;
+    display: none;
 }
 
 .tc-box {
@@ -592,6 +590,7 @@ header .start img {
         max-width: 80vw;
     }
 }
+
 
 
 
