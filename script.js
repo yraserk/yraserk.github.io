@@ -44,7 +44,7 @@ function loadMoreOther(button) {
 }
 
 function switchPortfolioTabOne(tabName) {
-    const portfolios = document.querySelectorAll('.roblox .portfolio-showcase');
+    const portfolios = document.querySelectorAll('.roblox-load-more');
     portfolios.forEach(p => p.classList.remove('selected'));
 
     const buttons = document.querySelectorAll('.roblox .portfolio-showcase-button');
@@ -63,7 +63,7 @@ function switchPortfolioTabOne(tabName) {
 }
 
 function switchPortfolioTabTwo(tabName) {
-    const portfolios = document.querySelectorAll('.other .portfolio-showcase');
+    const portfolios = document.querySelectorAll('.other-load-more');
     portfolios.forEach(p => p.classList.remove('selected'));
 
     const buttons = document.querySelectorAll('.other .portfolio-showcase-button');
@@ -88,4 +88,5 @@ document.querySelectorAll('.portfolio-showcase img').forEach(img => {
     });
 
 });
+
 
