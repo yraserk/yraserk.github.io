@@ -43,42 +43,50 @@ function loadMoreOther(button) {
     button.style.display = 'none';
 }
 
-function switchPortfolioTabOne(tabName) {
-    const portfolios = document.querySelectorAll('.roblox .portfolio-showcase');
-    portfolios.forEach(p => p.classList.remove('selected'));
+function switchPortfolioTabOne(tab) {
+    const allShowcases = document.querySelectorAll('.roblox .portfolio-showcase');
+    allShowcases.forEach(showcase => {
+        showcase.classList.remove('selected');
+        showcase.style.display = 'none';
+    });
 
-    const buttons = document.querySelectorAll('.roblox .portfolio-showcase-button');
-    buttons.forEach(b => b.classList.remove('selected'));
-
-    const activePortfolio = document.querySelector(`.roblox .${tabName}`);
-    if (activePortfolio) activePortfolio.classList.add('selected');
-
-    const clickedButton = document.querySelector(`.roblox .portfolio-showcase-button.${tabName}`);
-    if (clickedButton) clickedButton.classList.add('selected');
-
-    const loadBtn = document.querySelector('.roblox .load-more');
-    if (!portfolioState.roblox) {
-        loadBtn.style.display = 'inline-block';
+    const activeShowcase = document.querySelector(`.roblox .portfolio-showcase.${tab}`);
+    if (activeShowcase) {
+        activeShowcase.classList.add('selected');
+        activeShowcase.style.display = 'flex';
     }
+
+    const allButtons = document.querySelectorAll('.roblox .portfolio-showcase-button');
+    allButtons.forEach(btn => btn.classList.remove('selected'));
+
+    const activeButton = document.querySelector(`.roblox .portfolio-showcase-button.${tab}`);
+    if (activeButton) activeButton.classList.add('selected');
+
+    const loadBtn = document.querySelector('.roblox-load-more');
+    if (loadBtn) loadBtn.style.display = 'inline-block';
 }
 
-function switchPortfolioTabTwo(tabName) {
-    const portfolios = document.querySelectorAll('.other .portfolio-showcase');
-    portfolios.forEach(p => p.classList.remove('selected'));
+function switchPortfolioTabTwo(tab) {
+    const allShowcases = document.querySelectorAll('.other .portfolio-showcase');
+    allShowcases.forEach(showcase => {
+        showcase.classList.remove('selected');
+        showcase.style.display = 'none';
+    });
 
-    const buttons = document.querySelectorAll('.other .portfolio-showcase-button');
-    buttons.forEach(b => b.classList.remove('selected'));
-
-    const activePortfolio = document.querySelector(`.other .${tabName}`);
-    if (activePortfolio) activePortfolio.classList.add('selected');
-
-    const clickedButton = document.querySelector(`.other .portfolio-showcase-button.${tabName}`);
-    if (clickedButton) clickedButton.classList.add('selected');
-
-    const loadBtn = document.querySelector('.other .load-more');
-    if (!portfolioState.other) {
-        loadBtn.style.display = 'inline-block';
+    const activeShowcase = document.querySelector(`.other .portfolio-showcase.${tab}`);
+    if (activeShowcase) {
+        activeShowcase.classList.add('selected');
+        activeShowcase.style.display = 'flex';
     }
+
+    const allButtons = document.querySelectorAll('.other .portfolio-showcase-button');
+    allButtons.forEach(btn => btn.classList.remove('selected'));
+
+    const activeButton = document.querySelector(`.other .portfolio-showcase-button.${tab}`);
+    if (activeButton) activeButton.classList.add('selected');
+
+    const loadBtn = document.querySelector('.other-load-more');
+    if (loadBtn) loadBtn.style.display = 'inline-block';
 }
 
 document.querySelectorAll('.portfolio-showcase img').forEach(img => {
@@ -88,6 +96,7 @@ document.querySelectorAll('.portfolio-showcase img').forEach(img => {
     });
 
 });
+
 
 
 
