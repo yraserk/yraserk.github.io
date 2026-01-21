@@ -26,36 +26,55 @@ function switchToPrivacyTab() {
     privacyButton.classList.add("selected")
 }
 
-function switchPortfolioTabOne(tabName) {
-    document.querySelectorAll('.roblox .portfolio-showcase-button').forEach(btn => {
-        btn.classList.remove('selected');
-    });
+const portfolioState = {
+    roblox: false,
+    other: false
+};
 
-    var tabButton = document.querySelector(`.roblox .portfolio-showcase-button.${tabName}`);
-    tabButton.classList.add("selected")
-
-    document.querySelectorAll('.roblox .portfolio-showcase').forEach(showcase => {
-        showcase.classList.remove('selected');
-    });
-
-    var showcase = document.querySelector(`.roblox .portfolio-showcase.${tabName}`);
-    showcase.classList.add("selected")
+function loadMoreRoblox(button) {
+    document.querySelector('.roblox').classList.add('show-all');
+    portfolioState.roblox = true;
+    button.style.display = 'none';
 }
 
-function switchPortfolioTabTwo(tabName) {
-    document.querySelectorAll('.other .portfolio-showcase-button').forEach(btn => {
-        btn.classList.remove('selected');
-    });
+function loadMoreOther(button) {
+    document.querySelector('.other').classList.add('show-all');
+    portfolioState.other = true;
+    button.style.display = 'none';
+}
 
-    var tabButton = document.querySelector(`.other .portfolio-showcase-button.${tabName}`);
-    tabButton.classList.add("selected")
+function switchPortfolioTabOne(tab) {
+    const portfolios = document.querySelectorAll('.roblox .portfolio-showcase');
+    portfolios.forEach(p => p.classList.remove('selected'));
+    const buttonTabs = document.querySelectorAll('.roblox .portfolio-showcase-button');
+    buttonTabs.forEach(b => b.classList.remove('selected'));
 
-    document.querySelectorAll('.other .portfolio-showcase').forEach(showcase => {
-        showcase.classList.remove('selected');
-    });
+    const active = document.querySelector(`.roblox .${tab}`);
+    if (active) active.classList.add('selected');
+    const clickedButton = document.querySelector(`.roblox .portfolio-showcase-button.${tab}`);
+    if (clickedButton) clickedButton.classList.add('selected');
 
-    var showcase = document.querySelector(`.other .portfolio-showcase.${tabName}`);
-    showcase.classList.add("selected")
+    const loadBtn = document.querySelector('.roblox + div .load-more');
+    if (!portfolioState.roblox) {
+        loadBtn.style.display = 'inline-block';
+    }
+}
+
+function switchPortfolioTabTwo(tab) {
+    const portfolios = document.querySelectorAll('.other .portfolio-showcase');
+    portfolios.forEach(p => p.classList.remove('selected'));
+    const buttonTabs = document.querySelectorAll('.other .portfolio-showcase-button');
+    buttonTabs.forEach(b => b.classList.remove('selected'));
+
+    const active = document.querySelector(`.other .${tab}`);
+    if (active) active.classList.add('selected');
+    const clickedButton = document.querySelector(`.other .portfolio-showcase-button.${tab}`);
+    if (clickedButton) clickedButton.classList.add('selected');
+
+    const loadBtn = document.querySelector('.other + div .load-more');
+    if (!portfolioState.other) {
+        loadBtn.style.display = 'inline-block';
+    }
 }
 
 document.querySelectorAll('.portfolio-showcase img').forEach(img => {
@@ -63,4 +82,5 @@ document.querySelectorAll('.portfolio-showcase img').forEach(img => {
         document.querySelector('.showcase-popup img').src = img.src
         document.querySelector('.showcase-popup').showModal();
     });
+
 });
