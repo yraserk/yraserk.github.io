@@ -44,48 +44,54 @@ function loadMoreOther(button) {
 }
 
 function switchPortfolioTabOne(tab) {
-    const allShowcases = document.querySelectorAll('.roblox .portfolio-showcase');
+    const container = document.querySelector('.roblox');
+    if (container) container.classList.remove('show-all');
+
+    const allShowcases = container.querySelectorAll('.portfolio-showcase');
     allShowcases.forEach(showcase => {
         showcase.classList.remove('selected');
         showcase.style.display = 'none';
     });
 
-    const activeShowcase = document.querySelector(`.roblox .portfolio-showcase.${tab}`);
+    const activeShowcase = container.querySelector(`.portfolio-showcase.${tab}`);
     if (activeShowcase) {
         activeShowcase.classList.add('selected');
         activeShowcase.style.display = 'flex';
     }
 
-    const allButtons = document.querySelectorAll('.roblox .portfolio-showcase-button');
+    const allButtons = container.querySelectorAll('.portfolio-showcase-button');
     allButtons.forEach(btn => btn.classList.remove('selected'));
 
-    const activeButton = document.querySelector(`.roblox .portfolio-showcase-button.${tab}`);
+    const activeButton = container.querySelector(`.portfolio-showcase-button.${tab}`);
     if (activeButton) activeButton.classList.add('selected');
 
-    const loadBtn = document.querySelector('.roblox-load-more');
+    const loadBtn = container.querySelector('.roblox-load-more');
     if (loadBtn) loadBtn.style.display = 'inline-block';
 }
 
 function switchPortfolioTabTwo(tab) {
-    const allShowcases = document.querySelectorAll('.other .portfolio-showcase');
+    const container = document.querySelector('.other');
+    if (container) container.classList.remove('show-all');
+
+    const allShowcases = container.querySelectorAll('.portfolio-showcase');
     allShowcases.forEach(showcase => {
         showcase.classList.remove('selected');
         showcase.style.display = 'none';
     });
 
-    const activeShowcase = document.querySelector(`.other .portfolio-showcase.${tab}`);
+    const activeShowcase = container.querySelector(`.portfolio-showcase.${tab}`);
     if (activeShowcase) {
         activeShowcase.classList.add('selected');
         activeShowcase.style.display = 'flex';
     }
 
-    const allButtons = document.querySelectorAll('.other .portfolio-showcase-button');
+    const allButtons = container.querySelectorAll('.portfolio-showcase-button');
     allButtons.forEach(btn => btn.classList.remove('selected'));
 
-    const activeButton = document.querySelector(`.other .portfolio-showcase-button.${tab}`);
+    const activeButton = container.querySelector(`.portfolio-showcase-button.${tab}`);
     if (activeButton) activeButton.classList.add('selected');
 
-    const loadBtn = document.querySelector('.other-load-more');
+    const loadBtn = container.querySelector('.other-load-more');
     if (loadBtn) loadBtn.style.display = 'inline-block';
 }
 
@@ -96,6 +102,7 @@ document.querySelectorAll('.portfolio-showcase img').forEach(img => {
     });
 
 });
+
 
 
 
