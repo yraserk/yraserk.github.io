@@ -43,15 +43,17 @@ function loadMoreOther(button) {
     button.style.display = 'none';
 }
 
-function switchPortfolioTabOne(tab) {
+function switchPortfolioTabOne(tabName) {
     const portfolios = document.querySelectorAll('.roblox .portfolio-showcase');
     portfolios.forEach(p => p.classList.remove('selected'));
-    const buttonTabs = document.querySelectorAll('.roblox .portfolio-showcase-button');
-    buttonTabs.forEach(b => b.classList.remove('selected'));
 
-    const active = document.querySelector(`.roblox .${tab}`);
-    if (active) active.classList.add('selected');
-    const clickedButton = document.querySelector(`.roblox .portfolio-showcase-button.${tab}`);
+    const buttons = document.querySelectorAll('.roblox .portfolio-showcase-button');
+    buttons.forEach(b => b.classList.remove('selected'));
+
+    const activePortfolio = document.querySelector(`.roblox .${tabName}`);
+    if (activePortfolio) activePortfolio.classList.add('selected');
+
+    const clickedButton = document.querySelector(`.roblox .portfolio-showcase-button.${tabName}`);
     if (clickedButton) clickedButton.classList.add('selected');
 
     const loadBtn = document.querySelector('.roblox + div .load-more');
@@ -60,15 +62,17 @@ function switchPortfolioTabOne(tab) {
     }
 }
 
-function switchPortfolioTabTwo(tab) {
+function switchPortfolioTabTwo(tabName) {
     const portfolios = document.querySelectorAll('.other .portfolio-showcase');
     portfolios.forEach(p => p.classList.remove('selected'));
-    const buttonTabs = document.querySelectorAll('.other .portfolio-showcase-button');
-    buttonTabs.forEach(b => b.classList.remove('selected'));
 
-    const active = document.querySelector(`.other .${tab}`);
-    if (active) active.classList.add('selected');
-    const clickedButton = document.querySelector(`.other .portfolio-showcase-button.${tab}`);
+    const buttons = document.querySelectorAll('.other .portfolio-showcase-button');
+    buttons.forEach(b => b.classList.remove('selected'));
+
+    const activePortfolio = document.querySelector(`.other .${tabName}`);
+    if (activePortfolio) activePortfolio.classList.add('selected');
+
+    const clickedButton = document.querySelector(`.other .portfolio-showcase-button.${tabName}`);
     if (clickedButton) clickedButton.classList.add('selected');
 
     const loadBtn = document.querySelector('.other + div .load-more');
@@ -84,3 +88,4 @@ document.querySelectorAll('.portfolio-showcase img').forEach(img => {
     });
 
 });
+
