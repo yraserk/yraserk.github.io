@@ -103,7 +103,33 @@ document.querySelectorAll('.portfolio-showcase img').forEach(img => {
 
 });
 
+document.addEventListener("DOMContentLoaded", () => {
+    const hash = window.location.hash.replace("#", "").toLowerCase();
+    if (!hash) return;
 
+    const validCategories = ["gfx", "building", "modeling", "vfx", "scripting", "animation"];
 
+    if (!validCategories.includes(hash)) return;
 
+    const portfolioSection = document.querySelector(".portfolio");
+    if (portfolioSection) {
+        portfolioSection.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
 
+    setTimeout(() => {
+        if (typeof switchPortfolioTabOne === "function") {
+            switchPortfolioTabOne(hash);
+        }
+
+        document
+            .querySelectorAll(".roblox .portfolio-showcase-button")
+            .forEach(btn => btn.classList.remove("selected"));
+
+        const activeButton = document.querySelector(
+            `.roblox .portfolio-showcase-button.${hash}`
+        );
+        if (activeButton) {
+            activeButton.classList.add("selected");
+        }
+    }, 400);
+});
