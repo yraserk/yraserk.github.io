@@ -107,9 +107,10 @@ document.addEventListener("DOMContentLoaded", () => {
     const hash = window.location.hash.replace("#", "").toLowerCase();
     if (!hash) return;
 
-    const validCategories = ["gfx", "building", "modeling", "vfx", "scripting", "animation"];
+    const robloxCategories = ["gfx", "building", "modeling", "vfx", "scripting", "animation"];
+    const otherCategories  = ["website", "bot", "discord", "video", "graphic"];
 
-    if (!validCategories.includes(hash)) return;
+    const disabledTabs = ["video", "graphic"];
 
     const portfolioSection = document.querySelector(".portfolio");
     if (portfolioSection) {
@@ -117,19 +118,40 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     setTimeout(() => {
-        if (typeof switchPortfolioTabOne === "function") {
-            switchPortfolioTabOne(hash);
+
+        if (robloxCategories.includes(hash)) {
+            if (!disabledTabs.includes(hash) && typeof switchPortfolioTabOne === "function") {
+                switchPortfolioTabOne(hash);
+
+                document
+                    .querySelectorAll(".roblox .portfolio-showcase-button")
+                    .forEach(btn => btn.classList.remove("selected"));
+
+                const activeButton = document.querySelector(
+                    `.roblox .portfolio-showcase-button.${hash}`
+                );
+                if (activeButton) {
+                    activeButton.classList.add("selected");
+                }
+            }
         }
 
-        document
-            .querySelectorAll(".roblox .portfolio-showcase-button")
-            .forEach(btn => btn.classList.remove("selected"));
+        if (otherCategories.includes(hash)) {
+            if (!disabledTabs.includes(hash) && typeof switchPortfolioTabTwo === "function") {
+                switchPortfolioTabTwo(hash);
 
-        const activeButton = document.querySelector(
-            `.roblox .portfolio-showcase-button.${hash}`
-        );
-        if (activeButton) {
-            activeButton.classList.add("selected");
+                document
+                    .querySelectorAll(".other .portfolio-showcase-button")
+                    .forEach(btn => btn.classList.remove("selected"));
+
+                const activeButton = document.querySelector(
+                    `.other .portfolio-showcase-button.${hash}`
+                );
+                if (activeButton) {
+                    activeButton.classList.add("selected");
+                }
+            }
         }
+
     }, 400);
 });
