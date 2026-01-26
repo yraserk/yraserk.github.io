@@ -160,7 +160,7 @@ footer span {
     flex-direction: column;
     border-top: 1px solid var(--border);
     padding: var(--padding-3);
-    width: 100%;
+    width: calc(100% - (var(--padding-3) * 2));
 }
 
 .footer-bottom {
@@ -168,7 +168,7 @@ footer span {
     flex-direction: column;
     border-top: 1px solid var(--border);
     padding: var(--padding-3);
-    width: 100%;
+    width: calc(100% - (var(--padding-3) * 2));
     gap: 10px;
 }
 
@@ -596,6 +596,7 @@ header .start img {
         max-width: 80vw;
     }
 }
+
 
 
 
