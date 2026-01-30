@@ -179,6 +179,7 @@ footer span {
     width: 100%;
     max-width: 64rem;
     box-shadow: 0 0 15px var(--primary);
+    border: 2px solid var(--primary);
 }
 
 img, video {
@@ -213,7 +214,7 @@ img, video {
     aspect-ratio: 16 / 9;
     position: relative;
     overflow: hidden;
-    border: 4px solid var(--primary);
+    border: 2px solid var(--primary);
     border-radius: 17px;
 }
 
@@ -596,6 +597,7 @@ header .start img {
         max-width: 80vw;
     }
 }
+
 
 
 
