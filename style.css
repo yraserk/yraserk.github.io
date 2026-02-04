@@ -341,7 +341,7 @@ img, video {
         border: 1px solid rgba(255, 255, 255, 0.08);
         border-radius: 16px;
         box-shadow: 0 0 9px var(--primary);
-
+        border: 2px solid var(--primary);
 }
 
 @media only screen and (max-width: 500px) {
@@ -597,6 +597,7 @@ header .start img {
         max-width: 80vw;
     }
 }
+
 
 
 
