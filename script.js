@@ -107,7 +107,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const hash = window.location.hash.replace("#", "").toLowerCase();
     if (!hash) return;
 
-    const robloxCategories = ["gfx", "building", "modeling", "vfx", "scripting", "animation"];
+    const robloxCategories = ["gfx", "building", "modeling", "vfx", "scripting", "animation", "sfx"];
     const otherCategories  = ["website", "bot", "discord", "video", "graphic"];
 
     const disabledTabs = ["video", "graphic"];
@@ -119,7 +119,7 @@ document.addEventListener("DOMContentLoaded", () => {
         if (otherCategories.includes(hash)) {
             setTimeout(() => {
                 window.scrollBy({
-                    top: 300,
+                    top: 2000,
                     behavior: "smooth"
                 });
             }, 500);
@@ -164,4 +164,5 @@ document.addEventListener("DOMContentLoaded", () => {
 
     }, 400);
 });
+
 
