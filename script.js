@@ -115,6 +115,15 @@ document.addEventListener("DOMContentLoaded", () => {
     const portfolioSection = document.querySelector(".portfolio");
     if (portfolioSection) {
         portfolioSection.scrollIntoView({ behavior: "smooth", block: "start" });
+    
+        if (otherCategories.includes(hash)) {
+            setTimeout(() => {
+                window.scrollBy({
+                    top: 300,
+                    behavior: "smooth"
+                });
+            }, 500);
+        }
     }
 
     setTimeout(() => {
@@ -155,3 +164,4 @@ document.addEventListener("DOMContentLoaded", () => {
 
     }, 400);
 });
+
