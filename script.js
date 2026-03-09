@@ -107,7 +107,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const hash = window.location.hash.replace("#", "").toLowerCase();
     if (!hash) return;
 
-    const robloxCategories = ["gfx", "building", "modeling", "vfx", "scripting", "animation", "sfx"];
+    const robloxCategories = ["gfx", "building", "modeling", "vfx", "scripting", "animation", "sfx", "ui"];
     const otherCategories  = ["website", "bot", "discord", "video", "graphic"];
 
     const disabledTabs = ["video", "graphic"];
@@ -164,5 +164,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     }, 400);
 });
+
 
 
