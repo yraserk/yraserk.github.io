@@ -165,5 +165,38 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 400);
 });
 
+document.addEventListener("DOMContentLoaded", () => {
+    const videos = document.querySelectorAll(".portfolio-showcase video");
 
+    videos.forEach(video => {
+        const src = video.getAttribute("src");
+        if (!src) return;
 
+        let youtubeId = null;
+
+        const ytMatch = src.match(
+            /(?:youtube\.com\/watch\?v=|youtu\.be\/)([a-zA-Z0-9_-]{11})/
+        );
+
+        if (ytMatch) {
+            youtubeId = ytMatch[1];
+        }
+
+        if (youtubeId) {
+            const iframe = document.createElement("iframe");
+            iframe.src = `https://www.youtube.com/embed/${youtubeId}?rel=0&showinfo=0`;
+            iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
+            iframe.allowFullscreen = true;
+
+            iframe.classList.add("youtube-video");
+
+            iframe.style.width = "100%";
+            iframe.style.height = "100%";
+            iframe.style.objectFit = "cover";
+            iframe.style.border = "none";
+            iframe.style.borderRadius = "var(--border-radius)";
+
+            video.parentNode.replaceChild(iframe, video);
+        }
+    });
+});
