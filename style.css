@@ -182,7 +182,7 @@ footer span {
     border: 2px solid var(--primary);
 }
 
-img, video {
+img, video, .youtube-video {
     border: 1px solid var(--border);
     border-radius: var(--border-radius);
 }
@@ -257,7 +257,7 @@ img, video {
     display: flex;
 }
 
-.portfolio-showcase .box img, .portfolio-showcase .box video {
+.portfolio-showcase .box img, .portfolio-showcase .box video, .portfolio-showcase .box .youtube-video {
     width: 100%;
     height: 100%;
     transition: 0.3s ease all;
@@ -265,7 +265,7 @@ img, video {
     object-fit: cover;
 }
 
-.portfolio-showcase .box img:hover, .portfolio-showcase .box video:hover {
+.portfolio-showcase .box img:hover, .portfolio-showcase .box video:hover, .portfolio-showcase .box .youtube-video:hover {
     transform: scale(1.05);
 }
 
@@ -597,6 +597,7 @@ header .start img {
         max-width: 80vw;
     }
 }
+
 
 
 
