@@ -177,7 +177,7 @@ footer span {
 
 .banner {
     width: 100%;
-    max-width: 64rem;
+    max-width: 75rem;
     box-shadow: 0 0 15px var(--primary);
     border: 2px solid var(--primary);
 }
