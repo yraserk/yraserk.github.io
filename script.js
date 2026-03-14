@@ -169,7 +169,12 @@ document.addEventListener("DOMContentLoaded", () => {
     const videos = document.querySelectorAll(".portfolio-showcase video");
 
     videos.forEach(video => {
-        const src = video.getAttribute("src");
+        let src = video.getAttribute("src");
+        if (!src) {
+            const source = video.querySelector("source");
+            if (source) src = source.getAttribute("src");
+        }
+
         if (!src) return;
 
         let youtubeId = null;
@@ -184,7 +189,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         if (youtubeId) {
             const iframe = document.createElement("iframe");
-            iframe.src = `https://www.youtube.com/embed/${youtubeId}?rel=0&showinfo=0`;
+            iframe.src = `https://www.youtube.com/embed/${youtubeId}?rel=0`;
             iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
             iframe.allowFullscreen = true;
 
