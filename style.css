@@ -254,6 +254,7 @@ img, video, .youtube-video {
 
 .portfolio-showcase.selected {
     display: flex;
+    justify-content: center;
 }
 
 .portfolio-showcase .box img, .portfolio-showcase .box video, .portfolio-showcase .box .youtube-video {
