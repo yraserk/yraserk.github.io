@@ -99,7 +99,7 @@ span, p {
 }
 
 button {
-    background-color: var(--primary);
+    background: linear-gradient(90deg, #3c83f6 50%, #5b9aff 100%);
     color: var(--light-text);
     border: none;
     border-radius: var(--border-radius);
@@ -199,8 +199,7 @@ img, video, .youtube-video {
 }
 
 .portfolio-categories button:not(.selected) {
-    outline: 1px solid var(--primary);
-    background-color: #070e1c;
+    background: var(--secondary);
 }
 
 @media only screen and (max-width: 500px) {
