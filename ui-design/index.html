@@ -1,0 +1,684 @@
+        <!doctype html>
+        <html lang="en-US">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <title>UI/UX Design | Dominara</title>
+                            <meta name="description" content="Roblox Development Lorem ipsum dolor sit amet, consectetur adipiscing elit.">
+                                        <link rel="canonical" href="https://foliospace.net/yraserk/ui-design">
+                <meta property="og:url" content="https://foliospace.net/yraserk/ui-design">
+                        <meta property="og:type" content="website">
+            <meta property="og:title" content="UI/UX Design | Dominara">
+            <meta property="og:site_name" content="Dominara">
+                            <meta property="og:description" content="Roblox Development Lorem ipsum dolor sit amet, consectetur adipiscing elit.">
+                <meta name="twitter:description" content="Roblox Development Lorem ipsum dolor sit amet, consectetur adipiscing elit.">
+                        <meta name="twitter:card" content="summary">
+            <meta name="twitter:title" content="UI/UX Design | Dominara">
+            <link rel="preconnect" href="https://fonts.googleapis.com">
+            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+                            <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&#038;display=swap" rel="stylesheet">
+                            <link href="https://fonts.googleapis.com/css2?family=League%20Spartan:wght@100..900&#038;display=swap" rel="stylesheet">
+                            <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&#038;display=swap" rel="stylesheet">
+                                        <link rel="icon" href="https://foliospace.net/assets/user-uploaded/yraserk/Dominara-Logo-Blue-removebg-preview.webp">
+                        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/default.min.css" data-fs-hljs="1">
+            <script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js"></script>
+            <script>
+                document.documentElement.classList.add('fs-js');
+            </script>
+            <style>
+                :root{
+                    --site-card:#121314;
+                    --site-border:#060c16;
+                    --site-text:#e0e7f7;
+                    --site-sub:#91a3c6;
+                    --site-accent:#3581fc;
+                    --site-sidebar:#0f131c;
+                    --site-shadow:0 1px 2px rgba(0,0,0,0.04),0 4px 16px rgba(0,0,0,0.04);
+                }
+                *{box-sizing:border-box}
+                body{
+                    margin:0;
+                    font-family:Inter, system-ui, sans-serif;
+                    font-size:16px;
+                    line-height:1.6;
+                    background-color:#000000;
+                    background-image:none;
+                    background-size:auto;
+                    background-repeat:no-repeat;
+                    background-position:center center;
+                    background-attachment:fixed;
+                    color:var(--site-text);
+                    overflow-x: hidden;
+                }
+                .fs-wrap{max-width:1120px;margin:0 auto;padding:0 16px}
+                .fs-main{display:grid;gap:20px;padding:24px 0 36px}
+                .fs-block{background:transparent;border:0;border-radius:0;padding:0;margin:0;box-shadow:none}
+                .fs-hover-anim{transition:transform .2s ease;will-change:transform}
+                .fs-hover-grow:hover{transform:scale(1.03) !important;}
+                .fs-hover-shrink:hover{transform:scale(0.97) !important;}
+                .fs-hover-move-up:hover{transform:translate3d(0,-4px,0) !important;}
+                html.fs-js .fs-entrance{opacity:0;transform:translate3d(0,0,0);transition:opacity .5s ease, transform .5s ease;will-change:opacity, transform}
+                html.fs-js .fs-entrance[data-fs-entrance="slide-left" ]{transform:translate3d(-18px,0,0)}
+                html.fs-js .fs-entrance[data-fs-entrance="slide-right"]{transform:translate3d(18px,0,0)}
+                html.fs-js .fs-entrance[data-fs-entrance="slide-top"]{transform:translate3d(0,-18px,0)}
+                html.fs-js .fs-entrance[data-fs-entrance="slide-bottom"]{transform:translate3d(0,18px,0)}
+                html.fs-js .fs-entrance[data-fs-entrance="grow"]{transform:scale(0.96)}
+                html.fs-js .fs-entrance.is-in{opacity:1;transform:translate3d(0,0,0) scale(1)}
+                html.fs-js .fs-entrance.is-in.fs-hover-anim{transition:opacity .5s ease, transform .2s ease}
+                .fs-text{white-space:pre-wrap}
+                .fs-text > h1,.fs-text > h2{margin:0;font:inherit;line-height:inherit;color:inherit}
+                .fs-visually-hidden{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important}
+                .fs-button,.fs-link{color:inherit;text-decoration:none}
+                .fs-button{display:inline-flex !important;align-items:center;gap:8px;white-space:normal;justify-content: center;}
+                .fs-button-label,.fs-link-label{white-space:pre-wrap}
+                .fs-button-icon{display:inline-flex;align-items:center;justify-content:center;line-height:0;color:currentColor}
+                .fs-button-icon svg{width:100%;height:100%;display:block;stroke:currentColor}
+                .fs-button span {white-space: nowrap;}
+                .fs-code-block{
+                    position:relative;
+                    padding:12px;
+                    border-radius:12px;
+                    font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+                    font-size:14px;
+                    line-height:1.6;
+                    overflow:auto;
+                    background:var(--code-bg,#0b0f14);
+                    color:var(--code-fg,#e5e7eb);
+                    border:1px solid var(--code-border, rgba(148,163,184,.24));
+                }
+                .fs-code-block code{display:block;white-space:pre;background:transparent}
+                .fs-code-block .hljs{background:transparent;color:var(--code-fg)}
+                .fs-code-block .hljs-comment,.fs-code-block .hljs-quote{color:var(--code-comment)}
+                .fs-code-block .hljs-keyword,.fs-code-block .hljs-selector-tag,.fs-code-block .hljs-literal,.fs-code-block .hljs-type{color:var(--code-keyword)}
+                .fs-code-block .hljs-string,.fs-code-block .hljs-regexp,.fs-code-block .hljs-addition{color:var(--code-string)}
+                .fs-code-block .hljs-number,.fs-code-block .hljs-built_in,.fs-code-block .hljs-builtin-name{color:var(--code-number)}
+                .fs-code-block .hljs-title,.fs-code-block .hljs-section,.fs-code-block .hljs-function,.fs-code-block .hljs-name{color:var(--code-title)}
+                .fs-code-block .hljs-attr,.fs-code-block .hljs-attribute{color:var(--code-attr)}
+                .fs-code-block .hljs-symbol,.fs-code-block .hljs-variable,.fs-code-block .hljs-template-variable{color:var(--code-symbol)}
+                .fs-code-block.fs-code-theme-carbon{--code-bg:#0b0f14;--code-fg:#e5e7eb;--code-border:rgba(148,163,184,.22);--code-comment:#64748b;--code-keyword:#60a5fa;--code-string:#a7f3d0;--code-number:#fbbf24;--code-title:#f472b6;--code-attr:#7dd3fc;--code-symbol:#c4b5fd}
+                .fs-code-block.fs-code-theme-slate{--code-bg:#0f172a;--code-fg:#e2e8f0;--code-border:rgba(148,163,184,.28);--code-comment:#94a3b8;--code-keyword:#38bdf8;--code-string:#86efac;--code-number:#fca5a5;--code-title:#facc15;--code-attr:#7dd3fc;--code-symbol:#c4b5fd}
+                .fs-code-block.fs-code-theme-paper{--code-bg:#f8fafc;--code-fg:#0f172a;--code-border:rgba(15,23,42,.12);--code-comment:#64748b;--code-keyword:#2563eb;--code-string:#0f766e;--code-number:#b45309;--code-title:#7c3aed;--code-attr:#0369a1;--code-symbol:#9333ea}
+                .fs-code-block.fs-code-theme-sand{--code-bg:#f7f3e8;--code-fg:#3f2f1d;--code-border:rgba(120,93,61,.22);--code-comment:#8a6f50;--code-keyword:#7c2d12;--code-string:#166534;--code-number:#a16207;--code-title:#9333ea;--code-attr:#0f766e;--code-symbol:#9f1239}
+                .fs-image img,.fs-gallery img,.fs-video video{display:block;max-width:100%;height:auto;background:transparent}
+                .fs-image img[data-fs-lightbox-src],.fs-gallery img[data-fs-lightbox-src]{cursor:zoom-in}
+                .fs-gallery{display:flex;flex-wrap:wrap;gap:12px;align-items:stretch;justify-content:flex-start}
+                .fs-row{display:flex;gap:16px;align-items:stretch;justify-content:flex-start}
+                .fs-row>.fs-col{flex:1 1 0;min-height: fit-content;}
+                .fs-col{min-height:10px}
+                .fs-project-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px}
+                .fs-project-item{background:var(--site-card);border:1px solid var(--site-border);padding:12px;border-radius:10px;text-decoration:none;color:var(--site-text)}
+                .fs-contact input,.fs-contact textarea{background:var(--site-card);color: var(--site-text);resize: vertical;width:100%;border:1px solid var(--site-border);border-radius:8px;padding:10px;margin-bottom:10px;font-family:inherit;font-weight:inherit}
+                .fs-contact{--fs-contact-theme:var(--site-accent)}
+                .fs-contact button{border:0;background:var(--fs-contact-theme);color:#fff;padding:10px 14px;border-radius:8px;font-family:inherit;font-weight:inherit}
+                .fs-separator{display:flex;align-items:center;width:100%}
+                .fs-separator-line{width:100%;display: block;}
+                .fs-testimonial{border:1px solid var(--site-border);border-radius:14px;padding:18px;background:var(--site-card);box-shadow:var(--site-shadow);display:grid;gap:14px;--fs-testimonial-theme:var(--site-accent);color:var(--site-text)}
+                .fs-testimonial-text{font-size:16px;line-height:1.6;color:inherit}
+                .fs-testimonial-meta{display:flex;gap:12px;align-items:center}
+                .fs-testimonial-avatar{width:52px;height:52px;border-radius:50%;object-fit:cover;background:#f3f4f6;border:1px solid var(--site-border)}
+                .fs-testimonial-name{font-weight:600;color:inherit}
+                .fs-testimonial-stars{display:flex;gap:6px;margin-top:4px}
+                .fs-testimonial-stars .fs-star{width:18px;height:18px;color:var(--fs-testimonial-theme)}
+                .fs-testimonial-stars .fs-star.is-filled{fill:var(--fs-testimonial-theme);color:var(--fs-testimonial-theme)}
+                .fs-graph{border:1px solid var(--site-border);border-radius:14px;background:var(--site-card);padding:12px;box-shadow:var(--site-shadow)}
+                .fs-graph-chart{min-height:240px}
+                .fs-icon{display:inline-flex;align-items:center;justify-content:center;line-height:0}
+                .fs-icon svg{width:100%;height:100%;display:block}
+                .fs-accordion{display:grid;gap:12px}
+                .fs-accordion-item{border-bottom:1px solid var(--site-border);padding:10px 0}
+                .fs-accordion-item:last-child{border-bottom:0}
+                .fs-accordion-title{cursor:pointer;list-style:none;display:flex;align-items:center;justify-content:space-between}
+                .fs-accordion-title::-webkit-details-marker{display:none}
+                .fs-accordion-title::after{content:"+";font-weight:600}
+                .fs-accordion-item[open]>.fs-accordion-title::after{content:"-"}
+                .fs-accordion-content{margin-top:8px;color:var(--site-sub)}
+                .fs-nav{position:relative;width:100%}
+                .fs-nav a{text-decoration:none;color:inherit}
+                .fs-nav .fs-nav-link-button{display:inline-flex;align-items:center;justify-content:center;text-decoration:none}
+                .fs-nav-inner{display:flex;align-items:center;justify-content:space-between;gap:16px}
+                .fs-nav-links{display:flex;gap:16px;flex-wrap:wrap;align-items:center}
+                .fs-nav-toggle{display:none;align-items:center;justify-content:center;border:1px solid var(--site-border);background:var(--site-card);color:var(--site-text);border-radius:10px;padding:8px;cursor:pointer}
+                .fs-nav-toggle i{display:inline-flex;line-height:0}
+                .fs-nav-toggle svg{width:18px;height:18px;display:block}
+                .fs-nav-panel{display:none;flex-direction:column;gap:12px;background:var(--site-card);border:1px solid var(--site-border);border-radius:12px;padding:12px;box-shadow:var(--site-shadow);margin-top:10px}
+                .fs-nav.is-open .fs-nav-panel{display:flex}
+                .fs-tabs{display:grid;gap:12px;position:relative;--fs-tabs-theme:var(--site-accent)}
+                .fs-tabs-bar{display:flex;gap:8px;align-items:center;flex-wrap:wrap;position:relative}
+                .fs-tabs-bar button{border:1px solid var(--site-border);background:var(--site-card);color:inherit;padding:8px 12px;border-radius:8px;cursor:pointer;font:inherit}
+                .fs-tabs-bar button.is-active{border-color:var(--fs-tabs-theme);color:var(--fs-tabs-theme)}
+                .fs-tabs-panels{display:block}
+                .fs-tabs-panel{display:none}
+                .fs-tabs-panel.is-active{display:block}
+                .fs-tabs.is-smooth .fs-tabs-bar{padding:6px;border:1px solid var(--site-border);border-radius:999px;background:var(--site-card);display: inline-flex;}
+                .fs-tabs.is-smooth .fs-tabs-bar button{border:0;background:transparent;padding:8px 14px;border-radius:999px;position:relative;z-index:1}
+                .fs-tabs.is-smooth .fs-tabs-bar button.is-active{color:#fff}
+                .fs-tabs-indicator{position:absolute;top:6px;bottom:6px;left:0;width:0;border-radius:999px;background:var(--fs-tabs-theme);transition:transform .25s ease,width .25s ease;z-index:0}
+                .fs-social-buttons{display:flex;flex-wrap:wrap;align-items:center;gap:10px}
+                .fs-social-buttons .fs-social-btn{display:inline-flex;align-items:center;gap:8px;text-decoration:none;color:inherit;transition:transform .2s ease}
+                .fs-social-buttons .fs-social-btn:hover{transform:translateY(-1px)}
+                .fs-social-buttons .fs-social-icon{display:block}
+                .fs-social-buttons.is-icons .fs-social-label{display:none}
+                .fs-social-buttons.is-text .fs-social-icon{display:none}
+                .fs-infinite-slider{position:relative;overflow:hidden}
+                .fs-infinite-slider.is-full-width{width:100vw;margin-left:calc(50% - 50vw) !important;margin-right:calc(50% - 50vw) !important;position:relative}
+                .fs-infinite-slider.is-fade{-webkit-mask-image:linear-gradient(90deg, transparent 0%, #000 10%, #000 90%, transparent 100%);mask-image:linear-gradient(90deg, transparent 0%, #000 10%, #000 90%, transparent 100%)}
+                .fs-infinite-track{display:flex;gap:var(--fs-infinite-gap,16px);width:max-content;animation:fs-infinite-scroll var(--fs-infinite-duration,25s) linear infinite;animation-direction:var(--fs-infinite-direction,normal);will-change:transform}
+                .fs-infinite-group{display:flex;gap:var(--fs-infinite-gap,16px);align-items:center;flex:0 0 auto;min-width:max-content}
+                .fs-infinite-group>*{flex:0 0 auto}
+                .fs-infinite-slider.is-pause-on-hover:hover .fs-infinite-track{animation-play-state:paused}
+                * {scroll-behavior: smooth;scroll-margin-top: 200px;}
+                @keyframes fs-infinite-scroll{from{transform:translateX(0)}to{transform:translateX(calc(-1 * var(--fs-infinite-shift, var(--fs-infinite-step, 50%))))}}
+                .fs-lightbox{position:fixed;inset:0;z-index:999999;background:rgba(0,0,0,.88);display:flex;align-items:center;justify-content:center;padding:24px}
+                .fs-lightbox[hidden]{display:none}
+                .fs-lightbox-img{max-width:min(96vw,1400px);max-height:92vh;width:auto;height:auto;object-fit:contain;border-radius:10px}
+                .fs-lightbox-close{position:absolute;top:16px;right:16px;border:1px solid rgba(255,255,255,.35);background:rgba(0,0,0,.35);color:#fff;padding:8px 10px;border-radius:10px;cursor:pointer;font:inherit}
+                .tippy-box[data-theme~='foliospace']{background:var(--site-card);color:var(--site-text);border:1px solid var(--site-border);border-radius:10px;box-shadow:var(--site-shadow);font-size:12px;line-height:1.35}
+                .tippy-box[data-theme~='foliospace'] .tippy-content{padding:8px 10px}
+                .tippy-box[data-theme~='foliospace']>.tippy-arrow::after{content:"";position:absolute;border-color:transparent;border-style:solid;z-index:-1}
+                .tippy-box[data-theme~='foliospace'][data-placement^='top']>.tippy-arrow::before{border-top-color:var(--site-card)}
+                .tippy-box[data-theme~='foliospace'][data-placement^='top']>.tippy-arrow::after{border-width:9px 9px 0;border-top-color:var(--site-border);top:17px;left:-1px}
+                .tippy-box[data-theme~='foliospace'][data-placement^='bottom']>.tippy-arrow::before{border-bottom-color:var(--site-card)}
+                .tippy-box[data-theme~='foliospace'][data-placement^='bottom']>.tippy-arrow::after{border-width:0 9px 9px;border-bottom-color:var(--site-border);bottom:17px;left:-1px}
+                .tippy-box[data-theme~='foliospace'][data-placement^='left']>.tippy-arrow::before{border-left-color:var(--site-card)}
+                .tippy-box[data-theme~='foliospace'][data-placement^='left']>.tippy-arrow::after{border-width:9px 0 9px 9px;border-left-color:var(--site-border);left:17px;top:-1px}
+                .tippy-box[data-theme~='foliospace'][data-placement^='right']>.tippy-arrow::before{border-right-color:var(--site-card)}
+                .tippy-box[data-theme~='foliospace'][data-placement^='right']>.tippy-arrow::after{border-width:9px 9px 9px 0;border-right-color:var(--site-border);right:17px;top:-1px}
+                .fs-section{width:100vw;margin-left:calc(50% - 50vw) !important;margin-right:calc(50% - 50vw) !important;position:relative}
+                @media (max-width: 720px){
+                    .fs-nav-links{display:none}
+                    .fs-nav-toggle{display:inline-flex;flex-direction: column;}
+                    .fs-nav-static .fs-nav-links{display:flex}
+                    .fs-nav-static .fs-nav-toggle{display:none}
+                    .fs-nav-static .fs-nav-panel{display:none}
+                }
+                                @media (prefers-reduced-motion: reduce){
+                    .fs-hover-anim{transition:none}
+                    html.fs-js .fs-entrance{opacity:1;transform:none;transition:none}
+                }
+                @media (max-width:860px){.fs-row{flex-wrap:wrap}}
+                @media (max-width:550px){
+                    .fs-row[data-fs-wrap="wrap"][data-fs-direction="row"]{flex-direction:column !important}
+                    .fs-row[data-fs-wrap="wrap"][data-fs-direction="row-reverse"]{flex-direction:column-reverse !important}
+                    .fs-tabs.is-smooth .fs-tabs-bar {background: none;border: none;}
+                    .fs-tabs.is-smooth .fs-tabs-bar .fs-tabs-indicator {display: none;}
+                }
+                @media (prefers-color-scheme: dark){
+                    .tippy-box[data-theme~='foliospace']{background:#171a19;color:#e6e6e6;border-color:#262a28;box-shadow:none}
+                    .tippy-box[data-theme~='foliospace'][data-placement^='top']>.tippy-arrow::before{border-top-color:#171a19}
+                    .tippy-box[data-theme~='foliospace'][data-placement^='bottom']>.tippy-arrow::before{border-bottom-color:#171a19}
+                    .tippy-box[data-theme~='foliospace'][data-placement^='left']>.tippy-arrow::before{border-left-color:#171a19}
+                    .tippy-box[data-theme~='foliospace'][data-placement^='right']>.tippy-arrow::before{border-right-color:#171a19}
+                }
+                                .fs-header{
+                    position:sticky;
+                    top:0px;
+                    z-index:10000;
+                }
+                            </style>
+            <link rel="stylesheet" href="https://unpkg.com/tippy.js@6/dist/tippy.css">
+            <link rel="stylesheet" href="https://unpkg.com/tippy.js@6/animations/shift-away.css">
+        </head>
+        <body>
+            <header class="fs-header" style="position:sticky;top:0px;z-index:10000;"><div class="fs-wrap"><section class="fs-section fs-block" style="display:block;background-color:#0c0d0d3f;border:none;border-color:var(--site-border);border-radius:0px;box-shadow:none;-webkit-backdrop-filter:blur(5px);backdrop-filter:blur(5px);padding:8px 0px 8px 0px;margin:0px;"><div class="fs-wrap"><section class="fs-row cols-2" data-fs-direction="row" data-fs-wrap="nowrap" style="min-width: 0px; max-width: 100%; display:flex;min-width:0px;max-width:100%;background-color:#00000000;border:none;border-color:var(--site-border);border-radius:8px;box-shadow:none;padding:0px;margin:0px;flex-direction:row;justify-content:space-between;align-items:center;flex-wrap:nowrap;gap:10vw;"><div class="fs-col" style="min-width: 0px; max-width: 100%; display:block;min-width:0px;max-width:100%;background-color:#00000000;border:none;border-color:var(--site-border);border-radius:8px;padding:0px;margin:0px;display:flex;flex:1 1 0%;flex-direction:column;align-items:flex-start;text-align:left;"><section class="fs-row cols-2" data-fs-direction="row" data-fs-wrap="nowrap" style="min-width: 0px; max-width: 100%; display:flex;min-width:0px;max-width:100%;background-color:#00000000;border:none;border-color:var(--site-border);border-radius:8px;padding:16px;margin:0px;flex-direction:row;justify-content:flex-start;align-items:center;flex-wrap:nowrap;gap:10px;"><div class="fs-col" style="min-width: 50px; max-width: 100%; display:block;min-width:50px;max-width:100%;background-color:#00000000;border:none;border-color:var(--site-border);border-radius:8px;padding:0px;margin:0px;display:flex;flex:1 1 0%;flex-direction:column;align-items:flex-start;text-align:left;"><section class="fs-block fs-image"><img loading="lazy" decoding="async" src="https://foliospace.net/assets/user-uploaded/yraserk/Dominara-Logo-Blue-removebg-preview.webp" alt="Image" style="display:block;background-color:#00000000;border:none;border-color:#00000000;border-radius:8px;box-shadow:0 6px 18px rgba(2,6,23,0.04);padding:0px;margin:0px;width:50px;object-fit:cover;"></section></div><div class="fs-col" style="min-width: 140px; max-width: 100%; display:block;min-width:140px;max-width:100%;background-color:#00000000;border:none;border-color:var(--site-border);border-radius:8px;padding:0px;margin:0px;display:flex;flex:1 1 0%;flex-direction:column;align-items:flex-start;text-align:left;"><section class="fs-block fs-text" style="display:block;font-size:24px;font-weight:600;font-family:&quot;League Spartan&quot;, system-ui, sans-serif;letter-spacing:0px;text-align:left;color:var(--site-text);background-color:#00000000;border:none;border-color:var(--site-border);border-radius:0px;padding:0px;margin:0px;">DOMINARA</section><section class="fs-block fs-text" style="display:block;font-size:14px;font-weight:400;font-family:&quot;Inter&quot;, system-ui, sans-serif;letter-spacing:0px;text-align:left;color:var(--site-sub);background-color:#00000000;border:none;border-color:var(--site-border);border-radius:0px;padding:0px;margin:-12px 0px 0px 0px;">Service Agency</section></div></section></div><div class="fs-col" style="min-width: 0px; max-width: 500px; display:block;min-width:0px;max-width:500px;background-color:#00000000;border:none;border-color:var(--site-border);border-radius:8px;padding:0px;margin:0px;display:flex;flex:2 1 0%;flex-direction:column;align-items:center;text-align:center;"><section class="fs-block fs-nav fs-entrance fs-entrance-slide-right" data-fs-entrance="slide-right" data-fs-nav style="display:block;font-weight:500;font-family:&quot;Poppins&quot;, system-ui, sans-serif;text-align:center;color:var(--site-text);background-color:#11111100;border:none;border-color:var(--site-border);border-radius:8px;box-shadow:none;padding:0px;margin:0px;"><div class="fs-nav-inner" style="justify-content:center;gap:32px;"><div class="fs-nav-links" style="gap:32px;"><a class="fs-nav-link" href="/yraserk/">Home</a><a class="fs-nav-link" href="/yraserk/#services">Services</a><a class="fs-nav-link" href="/yraserk/#reviews">Reviews</a><a class="fs-nav-link-button" href="https://discord.gg/nfuhYvqHPY" style="display:inline-flex;align-items:center;justify-content:center;text-decoration:none;padding:8px 16px 8px 16px;border-radius:999px;background:#083cbe;color:var(--site-text);border:1px solid #11111100;">Join Discord</a></div><button type="button" class="fs-nav-toggle" data-fs-nav-toggle aria-expanded="false" aria-label="Toggle navigation"><i data-lucide="menu"></i></button></div><div class="fs-nav-panel" data-fs-nav-panel style="gap:32px;"><a class="fs-nav-link" href="/yraserk/">Home</a><a class="fs-nav-link" href="/yraserk/#services">Services</a><a class="fs-nav-link" href="/yraserk/#reviews">Reviews</a><a class="fs-nav-link-button" href="https://discord.gg/nfuhYvqHPY" style="display:inline-flex;align-items:center;justify-content:center;text-decoration:none;padding:8px 16px 8px 16px;border-radius:999px;background:#083cbe;color:var(--site-text);border:1px solid #11111100;">Join Discord</a></div></section></div></section></div></section></div></header>            <main class="fs-main fs-wrap">
+                                                <section class="fs-block fs-text" style="display:block;font-size:40px;font-weight:600;font-family:&quot;League Spartan&quot;, system-ui, sans-serif;text-align:center;color:var(--site-text);background-color:#00000000;border:none;border-color:var(--site-border);border-radius:0px;padding:0px;margin:128px 0px 0px 0px;"><h1>Roblox Development</h1></section><section class="fs-block fs-text" style="display:block;font-size:16px;font-weight:400;font-family:&quot;Inter&quot;, system-ui, sans-serif;text-align:center;color:var(--site-sub);background-color:#00000000;border:none;border-color:var(--site-border);border-radius:0px;padding:0px;margin:-16px 0px 0px 0px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</section><section class="fs-section fs-block" style="display:block;background-color:#00000000;border:none;border-color:var(--site-border);border-radius:0px;padding:32px 0px;margin:0px;"><div class="fs-wrap"><section class="fs-row cols-3" data-fs-direction="row" data-fs-wrap="wrap" style="min-width: 0px; max-width: 100%; display:flex;min-width:0px;max-width:100%;background-color:#00000000;border:none;border-color:var(--site-border);border-radius:8px;padding:0px;margin:20px 0px 0px 0px;flex-direction:row;justify-content:flex-start;align-items:stretch;flex-wrap:wrap;gap:20px;"><div class="fs-col" style="min-width: 0px; max-width: 100%; display:block;min-width:0px;max-width:100%;background-color:#00000000;border:none;border-color:var(--site-border);border-radius:8px;padding:0px;margin:0px;display:flex;flex:1 1 0%;flex-direction:column;align-items:flex-start;text-align:left;"><section class="fs-block fs-image fs-hover-anim fs-hover-grow fs-entrance fs-entrance-slide-bottom" data-fs-entrance="slide-bottom"><img loading="lazy" decoding="async" src="https://foliospace.net/wp-content/uploads/2026/03/gradient-4.jpg" alt="Image" style="display:block;background-color:#00000000;border:none;border-color:#00000000;border-radius:8px;box-shadow:0 6px 18px rgba(2,6,23,0.04);padding:0px;margin:0px;width:100%;object-fit:cover;"></section></div><div class="fs-col" style="min-width: 0px; max-width: 100%; display:block;min-width:0px;max-width:100%;background-color:#00000000;border:none;border-color:var(--site-border);border-radius:8px;padding:0px;margin:0px;display:flex;flex:1 1 0%;flex-direction:column;align-items:flex-start;text-align:left;"><section class="fs-block fs-image fs-hover-anim fs-hover-grow fs-entrance fs-entrance-slide-bottom" data-fs-entrance="slide-bottom"><img loading="lazy" decoding="async" src="https://foliospace.net/wp-content/uploads/2026/03/gradient-1.jpg" alt="Image" style="display:block;background-color:#00000000;border:none;border-color:#00000000;border-radius:8px;box-shadow:0 6px 18px rgba(2,6,23,0.04);padding:0px;margin:0px;width:100%;object-fit:cover;"></section></div><div class="fs-col" style="min-width: 0px; max-width: 100%; display:block;min-width:0px;max-width:100%;background-color:#00000000;border:none;border-color:var(--site-border);border-radius:8px;padding:0px;margin:0px;display:flex;flex:1 1 0%;flex-direction:column;align-items:flex-start;text-align:left;"><section class="fs-block fs-image fs-hover-anim fs-hover-grow fs-entrance fs-entrance-slide-bottom" data-fs-entrance="slide-bottom"><img loading="lazy" decoding="async" src="https://foliospace.net/wp-content/uploads/2026/03/gradient-2.jpg" alt="Image" style="display:block;background-color:#00000000;border:none;border-color:#00000000;border-radius:8px;box-shadow:0 6px 18px rgba(2,6,23,0.04);padding:0px;margin:0px;width:100%;object-fit:cover;"></section></div></section><section class="fs-row cols-3" data-fs-direction="row" data-fs-wrap="wrap" style="min-width: 0px; max-width: 100%; display:flex;min-width:0px;max-width:100%;background-color:#00000000;border:none;border-color:var(--site-border);border-radius:8px;padding:0px;margin:20px 0px 0px 0px;flex-direction:row;justify-content:flex-start;align-items:stretch;flex-wrap:wrap;gap:20px;"><div class="fs-col" style="min-width: 0px; max-width: 100%; display:block;min-width:0px;max-width:100%;background-color:#00000000;border:none;border-color:var(--site-border);border-radius:8px;padding:0px;margin:0px;display:flex;flex:1 1 0%;flex-direction:column;align-items:flex-start;text-align:left;"><section class="fs-block fs-image fs-hover-anim fs-hover-grow fs-entrance fs-entrance-slide-bottom" data-fs-entrance="slide-bottom"><img loading="lazy" decoding="async" src="https://foliospace.net/wp-content/uploads/2026/03/gradient-3.jpg" alt="Image" style="display:block;background-color:#00000000;border:none;border-color:#00000000;border-radius:8px;box-shadow:0 6px 18px rgba(2,6,23,0.04);padding:0px;margin:0px;width:100%;object-fit:cover;"></section></div><div class="fs-col" style="min-width: 0px; max-width: 100%; display:block;min-width:0px;max-width:100%;background-color:#00000000;border:none;border-color:var(--site-border);border-radius:8px;padding:0px;margin:0px;display:flex;flex:1 1 0%;flex-direction:column;align-items:flex-start;text-align:left;"><section class="fs-block fs-image fs-hover-anim fs-hover-grow fs-entrance fs-entrance-slide-bottom" data-fs-entrance="slide-bottom"><img loading="lazy" decoding="async" src="https://foliospace.net/wp-content/uploads/2026/03/gradient-4.jpg" alt="Image" style="display:block;background-color:#00000000;border:none;border-color:#00000000;border-radius:8px;box-shadow:0 6px 18px rgba(2,6,23,0.04);padding:0px;margin:0px;width:100%;object-fit:cover;"></section></div><div class="fs-col" style="min-width: 0px; max-width: 100%; display:block;min-width:0px;max-width:100%;background-color:#00000000;border:none;border-color:var(--site-border);border-radius:8px;padding:0px;margin:0px;display:flex;flex:1 1 0%;flex-direction:column;align-items:flex-start;text-align:left;"><section class="fs-block fs-image fs-hover-anim fs-hover-grow fs-entrance fs-entrance-slide-bottom" data-fs-entrance="slide-bottom"><img loading="lazy" decoding="async" src="https://foliospace.net/wp-content/uploads/2026/03/gradient-2.jpg" alt="Image" style="display:block;background-color:#00000000;border:none;border-color:#00000000;border-radius:8px;box-shadow:0 6px 18px rgba(2,6,23,0.04);padding:0px;margin:0px;width:100%;object-fit:cover;"></section></div></section><section class="fs-row cols-3" data-fs-direction="row" data-fs-wrap="wrap" style="min-width: 0px; max-width: 100%; display:flex;min-width:0px;max-width:100%;background-color:#00000000;border:none;border-color:var(--site-border);border-radius:8px;padding:0px;margin:20px 0px 0px 0px;flex-direction:row;justify-content:flex-start;align-items:stretch;flex-wrap:wrap;gap:20px;"><div class="fs-col" style="min-width: 0px; max-width: 100%; display:block;min-width:0px;max-width:100%;background-color:#00000000;border:none;border-color:var(--site-border);border-radius:8px;padding:0px;margin:0px;display:flex;flex:1 1 0%;flex-direction:column;align-items:flex-start;text-align:left;"><section class="fs-block fs-image fs-hover-anim fs-hover-grow fs-entrance fs-entrance-slide-bottom" data-fs-entrance="slide-bottom"><img loading="lazy" decoding="async" src="https://foliospace.net/wp-content/uploads/2026/03/gradient-1.jpg" alt="Image" style="display:block;background-color:#00000000;border:none;border-color:#00000000;border-radius:8px;box-shadow:0 6px 18px rgba(2,6,23,0.04);padding:0px;margin:0px;width:100%;object-fit:cover;"></section></div><div class="fs-col" style="min-width: 0px; max-width: 100%; display:block;min-width:0px;max-width:100%;background-color:#00000000;border:none;border-color:var(--site-border);border-radius:8px;padding:0px;margin:0px;display:flex;flex:1 1 0%;flex-direction:column;align-items:flex-start;text-align:left;"><section class="fs-block fs-image fs-hover-anim fs-hover-grow fs-entrance fs-entrance-slide-bottom" data-fs-entrance="slide-bottom"><img loading="lazy" decoding="async" src="https://foliospace.net/wp-content/uploads/2026/03/gradient-2.jpg" alt="Image" style="display:block;background-color:#00000000;border:none;border-color:#00000000;border-radius:8px;box-shadow:0 6px 18px rgba(2,6,23,0.04);padding:0px;margin:0px;width:100%;object-fit:cover;"></section></div><div class="fs-col" style="min-width: 0px; max-width: 100%; display:block;min-width:0px;max-width:100%;background-color:#00000000;border:none;border-color:var(--site-border);border-radius:8px;padding:0px;margin:0px;display:flex;flex:1 1 0%;flex-direction:column;align-items:flex-start;text-align:left;"><section class="fs-block fs-image fs-hover-anim fs-hover-grow fs-entrance fs-entrance-slide-bottom" data-fs-entrance="slide-bottom"><img loading="lazy" decoding="async" src="https://foliospace.net/wp-content/uploads/2026/03/gradient-3.jpg" alt="Image" style="display:block;background-color:#00000000;border:none;border-color:#00000000;border-radius:8px;box-shadow:0 6px 18px rgba(2,6,23,0.04);padding:0px;margin:0px;width:100%;object-fit:cover;"></section></div></section><section class="fs-row cols-3" data-fs-direction="row" data-fs-wrap="wrap" style="min-width: 0px; max-width: 100%; display:flex;min-width:0px;max-width:100%;background-color:#00000000;border:none;border-color:var(--site-border);border-radius:8px;padding:0px;margin:20px 0px 0px 0px;flex-direction:row;justify-content:flex-start;align-items:stretch;flex-wrap:wrap;gap:20px;"><div class="fs-col" style="min-width: 0px; max-width: 100%; display:block;min-width:0px;max-width:100%;background-color:#00000000;border:none;border-color:var(--site-border);border-radius:8px;padding:0px;margin:0px;display:flex;flex:1 1 0%;flex-direction:column;align-items:flex-start;text-align:left;"><section class="fs-block fs-image fs-hover-anim fs-hover-grow fs-entrance fs-entrance-slide-bottom" data-fs-entrance="slide-bottom"><img loading="lazy" decoding="async" src="https://foliospace.net/wp-content/uploads/2026/03/gradient-1.jpg" alt="Image" style="display:block;background-color:#00000000;border:none;border-color:#00000000;border-radius:8px;box-shadow:0 6px 18px rgba(2,6,23,0.04);padding:0px;margin:0px;width:100%;object-fit:cover;"></section></div><div class="fs-col" style="min-width: 0px; max-width: 100%; display:block;min-width:0px;max-width:100%;background-color:#00000000;border:none;border-color:var(--site-border);border-radius:8px;padding:0px;margin:0px;display:flex;flex:1 1 0%;flex-direction:column;align-items:flex-start;text-align:left;"><section class="fs-block fs-image fs-hover-anim fs-hover-grow fs-entrance fs-entrance-slide-bottom" data-fs-entrance="slide-bottom"><img loading="lazy" decoding="async" src="https://foliospace.net/wp-content/uploads/2026/03/gradient-2.jpg" alt="Image" style="display:block;background-color:#00000000;border:none;border-color:#00000000;border-radius:8px;box-shadow:0 6px 18px rgba(2,6,23,0.04);padding:0px;margin:0px;width:100%;object-fit:cover;"></section></div><div class="fs-col" style="min-width: 0px; max-width: 100%; display:block;min-width:0px;max-width:100%;background-color:#00000000;border:none;border-color:var(--site-border);border-radius:8px;padding:0px;margin:0px;display:flex;flex:1 1 0%;flex-direction:column;align-items:flex-start;text-align:left;"><section class="fs-block fs-image fs-hover-anim fs-hover-grow fs-entrance fs-entrance-slide-bottom" data-fs-entrance="slide-bottom"><img loading="lazy" decoding="async" src="https://foliospace.net/wp-content/uploads/2026/03/gradient-3.jpg" alt="Image" style="display:block;background-color:#00000000;border:none;border-color:#00000000;border-radius:8px;box-shadow:0 6px 18px rgba(2,6,23,0.04);padding:0px;margin:0px;width:100%;object-fit:cover;"></section></div></section></div></section>            </main>
+            <footer class="fs-footer"><div class="fs-wrap"><section class="fs-section fs-block" style="display:block;background-color:#11111100;border:none;border-color:var(--site-border);border-radius:0px;box-shadow:none;padding:32px 0px;margin:0px;"><div class="fs-wrap"><section class="fs-block fs-text" style="display:block;font-size:12px;font-weight:500;font-family:&quot;League Spartan&quot;, system-ui, sans-serif;text-align:center;color:var(--site-sub);background-color:#00000000;border:none;border-color:#11111100;border-radius:0px;padding:0px;margin:0px;">© 2026 Dominara. All rights reserved.</section></div></section></div></footer>                                    <script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.min.js"></script>
+            <script src="https://unpkg.com/tippy.js@6/dist/tippy.umd.min.js"></script>
+            <script>
+                (function () {
+                    function run() {
+                        var blocks = document.querySelectorAll('.fs-code-block code');
+                        if (!blocks.length || !window.hljs) {
+                            return false;
+                        }
+                        if (typeof window.hljs.highlightAll === 'function') {
+                            window.hljs.highlightAll();
+                        }
+                        if (typeof window.hljs.highlightElement !== 'function') {
+                            return true;
+                        }
+                        blocks.forEach(function (code) {
+                            code.classList.add('hljs');
+                            code.removeAttribute('data-highlighted');
+                            var match = String(code.className || '').match(/language-([a-z0-9_-]+)/i);
+                            var lang = match ? match[1] : '';
+                            if (lang && window.hljs.getLanguage && window.hljs.getLanguage(lang)) {
+                                var result = window.hljs.highlight(code.textContent || '', { language: lang });
+                                code.innerHTML = result.value || code.textContent || '';
+                                return;
+                            }
+                            window.hljs.highlightElement(code);
+                        });
+                        return true;
+                    }
+                    if (document.readyState === 'loading') {
+                        document.addEventListener('DOMContentLoaded', function () {
+                            if (run()) return;
+                            var tries = 0;
+                            var timer = setInterval(function () {
+                                tries += 1;
+                                if (run() || tries > 10) {
+                                    clearInterval(timer);
+                                }
+                            }, 200);
+                        });
+                    } else {
+                        run();
+                    }
+                })();
+            </script>
+            <script src="https://unpkg.com/lucide@latest"></script>
+            <script>
+                (function () {
+                    var tries = 0;
+                    function run() {
+                        if (window.lucide) {
+                            if (typeof window.lucide.createIcons === 'function') {
+                                window.lucide.createIcons();
+                                return;
+                            }
+                        }
+                        if (tries >= 20) {
+                            return;
+                        }
+                        tries += 1;
+                        setTimeout(run, 120);
+                    }
+                    run();
+                })();
+            </script>
+            <script>
+                (function () {
+                    var observer = null;
+                    var tooltipErrors = new WeakSet();
+                    var singletonGuarded = false;
+                    function tooltipText(el) {
+                        if (!el || !el.getAttribute) return '';
+                        var explicit = String(el.getAttribute('data-tooltip') || '').trim();
+                        if (explicit) return explicit;
+                        var title = String(el.getAttribute('title') || '').trim();
+                        if (title) return title;
+                        var aria = String(el.getAttribute('aria-label') || '').trim();
+                        var buttonLike = false;
+                        try {
+                            buttonLike = !!(el.matches('button,[role="button"]') || el.classList.contains('fs-nav-toggle') || el.classList.contains('fs-lightbox-close'));
+                        } catch (err) {
+                            buttonLike = false;
+                        }
+                        if (aria && buttonLike) return aria;
+                        return '';
+                    }
+                    function applyTooltips(root) {
+                        if (!singletonGuarded && typeof window.tippy === 'function' && typeof window.tippy.createSingleton === 'function') {
+                            var originalCreateSingleton = window.tippy.createSingleton;
+                            if (!originalCreateSingleton.__fsSafeWrapper) {
+                                window.tippy.createSingleton = function () {
+                                    try {
+                                        return originalCreateSingleton.apply(this, arguments);
+                                    } catch (err) {
+                                        var message = String(err && err.message ? err.message : '');
+                                        if (message.toLowerCase().indexOf('applystyles') === -1) {
+                                            throw err;
+                                        }
+                                        console.warn('[FolioSpace Public] createSingleton fallback applied', err);
+                                        var incoming = arguments.length ? arguments[0] : [];
+                                        var instances = Array.isArray(incoming) ? incoming.filter(Boolean) : [];
+                                        return {
+                                            instances: instances,
+                                            setInstances: function (nextInstances) {
+                                                this.instances = Array.isArray(nextInstances) ? nextInstances.filter(Boolean) : [];
+                                            },
+                                            setProps: function (nextProps) {
+                                                this.instances.forEach(function (instance) {
+                                                    if (instance && typeof instance.setProps === 'function') {
+                                                        instance.setProps(nextProps || {});
+                                                    }
+                                                });
+                                            },
+                                            show: function (target) {
+                                                if (target && target._tippy && typeof target._tippy.show === 'function') {
+                                                    target._tippy.show();
+                                                    return;
+                                                }
+                                                var first = this.instances[0];
+                                                if (first && typeof first.show === 'function') {
+                                                    first.show();
+                                                }
+                                            },
+                                            hide: function () {
+                                                this.instances.forEach(function (instance) {
+                                                    if (instance && typeof instance.hide === 'function') {
+                                                        instance.hide();
+                                                    }
+                                                });
+                                            },
+                                            unmount: function () {
+                                                this.instances.forEach(function (instance) {
+                                                    if (instance && typeof instance.unmount === 'function') {
+                                                        instance.unmount();
+                                                    }
+                                                });
+                                            },
+                                            destroy: function () {
+                                                this.instances.forEach(function (instance) {
+                                                    if (instance && typeof instance.destroy === 'function') {
+                                                        instance.destroy();
+                                                    }
+                                                });
+                                                this.instances = [];
+                                            }
+                                        };
+                                    }
+                                };
+                                window.tippy.createSingleton.__fsSafeWrapper = true;
+                            }
+                            singletonGuarded = true;
+                        }
+                        if (typeof window.tippy !== 'function') return;
+                        var scope = root && root.querySelectorAll ? root : document;
+                        var nodes = scope.querySelectorAll('[data-tooltip], button[title], a[title], [role="button"][title], button[aria-label], [data-fs-nav-toggle], .fs-lightbox-close, [data-fs-lightbox-src][aria-label]');
+                        nodes.forEach(function (el) {
+                            if (!el || !el.isConnected || (typeof el.closest === 'function' && el.closest('.tippy-box'))) return;
+                            var content = tooltipText(el);
+                            if (!content) return;
+                            var titleText = el.hasAttribute('title') ? String(el.getAttribute('title') || '') : '';
+                            var initialized = false;
+                            try {
+                                if (el._tippy) {
+                                    el._tippy.setContent(content);
+                                    initialized = true;
+                                } else {
+                                    window.tippy(el, {
+                                        content: content,
+                                        theme: 'foliospace',
+                                        animation: 'shift-away',
+                                        delay: [120, 40],
+                                        maxWidth: 320,
+                                        placement: 'top',
+                                    });
+                                    initialized = !!el._tippy;
+                                }
+                            } catch (err) {
+                                if (!tooltipErrors.has(el)) {
+                                    tooltipErrors.add(el);
+                                    console.warn('[FolioSpace Public] Tooltip init failed', err);
+                                }
+                                return;
+                            }
+                            if (initialized && titleText) {
+                                el.setAttribute('data-tooltip-title', titleText);
+                                el.removeAttribute('title');
+                            }
+                        });
+                    }
+                    function startObserver() {
+                        if (observer || typeof MutationObserver !== 'function' || !document.body) return;
+                        observer = new MutationObserver(function (records) {
+                            records.forEach(function (record) {
+                                record.addedNodes.forEach(function (node) {
+                                    if (!(node instanceof HTMLElement)) return;
+                                    applyTooltips(node);
+                                });
+                            });
+                        });
+                        observer.observe(document.body, { childList: true, subtree: true });
+                    }
+                    function boot() {
+                        applyTooltips(document);
+                        startObserver();
+                    }
+                    if (document.readyState === 'loading') {
+                        document.addEventListener('DOMContentLoaded', function () {
+                            boot();
+                            setTimeout(boot, 250);
+                        });
+                    } else {
+                        boot();
+                        setTimeout(boot, 250);
+                    }
+                })();
+            </script>
+            <script>
+                (function () {
+                    var items = document.querySelectorAll('[data-fs-entrance]');
+                    if (!items.length) {
+                        return;
+                    }
+                    items.forEach(function (el) {
+                        var raw = String(el.getAttribute('data-fs-entrance-delay') || '').trim().replace(/s$/i, '');
+                        var delay = parseFloat(raw);
+                        if (Number.isFinite(delay) && delay > 0) {
+                            el.style.transitionDelay = delay + 's';
+                        }
+                    });
+                    var reduce = false;
+                    try {
+                        reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+                    } catch (err) {
+                        reduce = false;
+                    }
+                    if (reduce || !('IntersectionObserver' in window)) {
+                        items.forEach(function (el) { el.classList.add('is-in'); });
+                        return;
+                    }
+                    var observer = new IntersectionObserver(function (entries) {
+                        entries.forEach(function (entry) {
+                            if (entry.isIntersecting) {
+                                entry.target.classList.add('is-in');
+                                var raw = String(entry.target.getAttribute('data-fs-entrance-delay') || '').trim().replace(/s$/i, '');
+                                var delay = parseFloat(raw);
+                                if (Number.isFinite(delay) && delay > 0) {
+                                    window.setTimeout(function () {
+                                        entry.target.style.transitionDelay = '0s';
+                                    }, Math.round((delay + 0.55) * 1000));
+                                }
+                                observer.unobserve(entry.target);
+                            }
+                        });
+                    }, { threshold: 0.15, rootMargin: '0px 0px -10% 0px' });
+                    items.forEach(function (el) { observer.observe(el); });
+                })();
+            </script>
+            <script>
+                (function () {
+                    var triggers = document.querySelectorAll('[data-fs-lightbox-src]');
+                    if (!triggers.length) {
+                        return;
+                    }
+                    var modal = document.createElement('div');
+                    modal.className = 'fs-lightbox';
+                    modal.hidden = true;
+                    modal.innerHTML = '<button type="button" class="fs-lightbox-close" aria-label="Close">&times;</button><img class="fs-lightbox-img" alt="">';
+                    var closeBtn = modal.querySelector('.fs-lightbox-close');
+                    var img = modal.querySelector('.fs-lightbox-img');
+                    var close = function () {
+                        modal.hidden = true;
+                        document.body.style.overflow = '';
+                        img.removeAttribute('src');
+                    };
+                    var open = function (src, alt) {
+                        if (!src) return;
+                        img.setAttribute('src', src);
+                        img.setAttribute('alt', alt || '');
+                        modal.hidden = false;
+                        document.body.style.overflow = 'hidden';
+                    };
+                    closeBtn.addEventListener('click', close);
+                    modal.addEventListener('click', function (event) {
+                        if (event.target === modal) {
+                            close();
+                        }
+                    });
+                    document.addEventListener('keydown', function (event) {
+                        if (event.key === 'Escape' && !modal.hidden) {
+                            close();
+                        }
+                    });
+                    triggers.forEach(function (el) {
+                        if (!el.hasAttribute('tabindex')) {
+                            el.setAttribute('tabindex', '0');
+                        }
+                        var src = String(el.getAttribute('data-fs-lightbox-src') || '');
+                        var alt = String(el.getAttribute('data-fs-lightbox-alt') || el.getAttribute('alt') || '');
+                        el.addEventListener('click', function () { open(src, alt); });
+                        el.addEventListener('keydown', function (event) {
+                            if (event.key === 'Enter' || event.key === ' ') {
+                                event.preventDefault();
+                                open(src, alt);
+                            }
+                        });
+                    });
+                    document.body.appendChild(modal);
+                })();
+            </script>
+              <script>
+                  (function () {
+                      var navs = document.querySelectorAll('[data-fs-nav]');
+                      if (!navs.length) {
+                          return;
+                    }
+                    navs.forEach(function (nav) {
+                        var toggle = nav.querySelector('[data-fs-nav-toggle]');
+                        var panel = nav.querySelector('[data-fs-nav-panel]');
+                        if (!toggle || !panel) {
+                            return;
+                        }
+                        var setState = function (open) {
+                            nav.classList.toggle('is-open', open);
+                            toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+                        };
+                        toggle.addEventListener('click', function () {
+                            setState(!nav.classList.contains('is-open'));
+                        });
+                        panel.querySelectorAll('a').forEach(function (link) {
+                            link.addEventListener('click', function () {
+                                setState(false);
+                            });
+                        });
+                      });
+                  })();
+              </script>
+              <script>
+                  (function () {
+                      function updateIndicator(wrapper) {
+                          var indicator = wrapper.querySelector('[data-fs-tabs-indicator]');
+                          if (!indicator) return;
+                          var bar = wrapper.querySelector('.fs-tabs-bar');
+                          var active = wrapper.querySelector('.fs-tabs-bar button.is-active');
+                          if (!bar || !active) return;
+                          var rect = active.getBoundingClientRect();
+                          var barRect = bar.getBoundingClientRect();
+                          indicator.style.width = rect.width + 'px';
+                          indicator.style.transform = 'translateX(' + (rect.left - barRect.left) + 'px)';
+                      }
+                      function setActive(wrapper, index) {
+                          var buttons = wrapper.querySelectorAll('[data-fs-tab]');
+                          var panels = wrapper.querySelectorAll('[data-fs-tab-panel]');
+                          buttons.forEach(function (btn) {
+                              var isActive = Number(btn.getAttribute('data-fs-tab')) === index;
+                              btn.classList.toggle('is-active', isActive);
+                              btn.setAttribute('aria-selected', isActive ? 'true' : 'false');
+                          });
+                          panels.forEach(function (panel) {
+                              var isActive = Number(panel.getAttribute('data-fs-tab-panel')) === index;
+                              panel.classList.toggle('is-active', isActive);
+                          });
+                          updateIndicator(wrapper);
+                      }
+                      var wrappers = document.querySelectorAll('[data-fs-tabs]');
+                      if (!wrappers.length) {
+                          return;
+                      }
+                      wrappers.forEach(function (wrapper) {
+                          var buttons = wrapper.querySelectorAll('[data-fs-tab]');
+                          if (!buttons.length) return;
+                          buttons.forEach(function (btn) {
+                              btn.addEventListener('click', function () {
+                                  var idx = Number(btn.getAttribute('data-fs-tab') || 0);
+                                  setActive(wrapper, idx);
+                              });
+                          });
+                          setActive(wrapper, 0);
+                      });
+                      window.addEventListener('resize', function () {
+                          wrappers.forEach(updateIndicator);
+                      });
+                  })();
+              </script>
+            <script>
+                (function () {
+                    function stripIds(node) {
+                        if (!node) return;
+                        if (node.removeAttribute) {
+                            node.removeAttribute('id');
+                        }
+                        if (node.querySelectorAll) {
+                            node.querySelectorAll('[id]').forEach(function (el) {
+                                el.removeAttribute('id');
+                            });
+                        }
+                    }
+                    function getGap(track) {
+                        if (!track || !window.getComputedStyle) return 0;
+                        var style = window.getComputedStyle(track);
+                        var raw = style.columnGap || style.gap || '0';
+                        var gap = parseFloat(raw);
+                        return Number.isFinite(gap) ? gap : 0;
+                    }
+                    function setupSlider(slider) {
+                        if (!slider) return;
+                        var track = slider.querySelector('.fs-infinite-track');
+                        if (!track) return;
+                        track.querySelectorAll('[data-fs-infinite-clone="1"]').forEach(function (node) {
+                            if (node.parentNode) {
+                                node.parentNode.removeChild(node);
+                            }
+                        });
+                        var base = track.querySelector('[data-fs-infinite-group]') || track.querySelector('.fs-infinite-group');
+                        if (!base) return;
+                        base.setAttribute('data-fs-infinite-group', '1');
+                        var baseRect = base.getBoundingClientRect();
+                        var containerRect = slider.getBoundingClientRect();
+                        var baseWidth = baseRect.width;
+                        var containerWidth = containerRect.width;
+                        if (!baseWidth || !containerWidth) return;
+                        var gap = getGap(track);
+                        var step = baseWidth + gap;
+                        var needed = Math.ceil((containerWidth + step) / step);
+                        var total = Math.max(2, needed);
+                        for (var i = 1; i < total; i++) {
+                            var clone = base.cloneNode(true);
+                            clone.setAttribute('aria-hidden', 'true');
+                            clone.setAttribute('data-fs-infinite-clone', '1');
+                            stripIds(clone);
+                            track.appendChild(clone);
+                        }
+                        slider.style.setProperty('--fs-infinite-shift', step + 'px');
+                    }
+                    function run() {
+                        var sliders = document.querySelectorAll('.fs-infinite-slider');
+                        if (!sliders.length) return;
+                        sliders.forEach(setupSlider);
+                    }
+                    function debounce(fn, wait) {
+                        var t;
+                        return function () {
+                            clearTimeout(t);
+                            t = setTimeout(fn, wait);
+                        };
+                    }
+                    var rerun = debounce(run, 200);
+                    if (document.readyState === 'loading') {
+                        document.addEventListener('DOMContentLoaded', function () {
+                            run();
+                            setTimeout(run, 200);
+                        });
+                    } else {
+                        run();
+                        setTimeout(run, 200);
+                    }
+                    window.addEventListener('resize', rerun);
+                })();
+            </script>
+                    </body>
+        </html>
+        
